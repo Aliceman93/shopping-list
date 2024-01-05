@@ -8,18 +8,19 @@ sendInput.addEventListener('keydown', function(event) {
         const newGroceries = document.createElement('div');
         newGroceries.classList.add('text');
         newGroceries.textContent = groceriesText;
+        newGroceries.addEventListener('click', function() {
+            newGroceries.classList.toggle('done');
+
+        });
+        if (groceriesText != '') {
+            groceriesContainer.append(newGroceries)
+        }
+        sendInput.value = "";
     }
 });
 
-newGroceries.addEventListener('click', function() {
-    newGroceries.classList.toggle('done');
 
 
-    if (groceriesTex != '') {
-        groceriesContainer.append(newGroceries)
-    }
-    sendInput.value = "";
-});
 
 /* Пустые элементы не должны добавляться */
 
